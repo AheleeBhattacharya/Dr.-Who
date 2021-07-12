@@ -1,0 +1,5 @@
+atsign_authentication_helper:
+  git:
+    url: https://github.com/atsign-foundation/at_widgets.git
+    path: atsign_authentication_helper
+    ref: dev_env
