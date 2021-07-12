@@ -1,0 +1,18 @@
+OutlineButton( 
+  borderSide: BorderSide(width: 2, color: Colors.white), 
+  child: Text(‘$sign’), 
+  shape: RoundedRectangleBorder( 
+    borderRadius: BorderRadius.circular(16),
+  ), 
+  onPressed: () async { 
+    await atProtocolService.makePrimary(sign); 
+    await atProtocolService.onboard().then((success) { 
+      if (success) { 
+        ExtendedNavigator.of(context) .replace(Routes.homeView); 
+      } else { 
+        Scaffold.of(context).showSnackBar(SnackBar( 
+          content: Text(‘Sorry…something went wrong’), )
+        ); 
+      } 
+    }); 
+  })
